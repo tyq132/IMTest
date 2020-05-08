@@ -1,0 +1,40 @@
+//顶级构建文件，您可以在其中添加所有子项目模块共有的配置选项。
+buildscript {
+    ext.kotlin_version = '1.3.61'
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        mavenLocal()
+        //        google()
+        //        jcenter()
+        //        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/google" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/gradle-plugin" }
+        google()
+    }
+    dependencies {
+        //注意：不要在此处放置应用程序依赖项;它们属于  单个模块build.gradle文件
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        //        google()
+        //        jcenter()
+        //        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/google" }
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/gradle-plugin" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,2 @@
+include ':App', ':Base', ':MiLibrary', ':MiView', ':MiUtil'
+include ':takephotolib'
